@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#F5D977">
+<meta name="description" content="跟着三毛走进张乐平旧居，360°漫游房间，点开墙面与展柜中的漫画故事。">
+<title>三毛来啦！｜张乐平旧居虚拟博物馆</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+ <a class="brand" href="#tour" aria-label="三毛来啦，回到漫游"><svg viewBox="0 0 54 60" aria-hidden="true"><path d="M17 24C2 2 24-4 25 22M27 23C23 0 43 0 34 25M35 25C44 9 57 18 41 29"/><path d="M9 39c0-13 10-19 22-18s20 9 18 21-12 17-24 15S9 49 9 39Z" fill="#F5D977"/><path d="M23 36v3m13-2v3m-13 7q7 6 14-1"/></svg><span>三毛来啦<span class="brand-mark">!</span></span></a>
+ <nav class="main-nav" aria-label="主导航"><a href="#tour" class="active" data-tab="tour">漫游旧居</a><a href="#collection" data-tab="collection">作品小馆</a></nav>
+ <button class="about-button" id="about-open">关于这里 <span>↗</span></button>
+</header>
+<main>
+ <section id="tour-page" class="page">
+  <div class="page-intro"><div><p class="place-label">张乐平旧居 · 线上博物馆</p><h1>今天，去<span class="title-highlight">三毛家</span>。<svg class="doodle-spark" viewBox="0 0 56 56" aria-hidden="true"><path d="m28 1 4 18 19-8-13 17 17 6-20 2 3 19-12-16-16 11 8-20L1 21l20 1Z"/></svg></h1></div><p class="intro-note">门开着，进来逛逛吧。<svg viewBox="0 0 105 28" aria-hidden="true"><path d="M2 4c22 21 65 22 97 5m-15-3 17 1-7 15"/></svg></p></div>
+  <div class="museum-shell">
+   <aside class="room-panel" aria-label="旧居房间">
+    <div class="host-card"><div><span class="hello">嗨，欢迎来做客！</span><p>跟我走，<br>故事就在屋子里。</p></div><img src="assets/sanmao.png" alt="挥手的三毛"></div>
+    <div class="room-heading"><span>逛到哪里？</span><span class="room-number">12 处空间</span></div>
+    <div id="room-list" class="room-list"></div>
+    <div class="room-footer"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 18s6-6 6-11A6 6 0 0 0 4 7c0 5 6 11 6 11Z"/><circle cx="10" cy="7" r="2"/></svg>五原路 288 弄 3 号</div>
+   </aside>
+   <section class="panorama-panel" aria-label="旧居全景漫游">
+    <div id="viewer" class="viewer" tabindex="0" role="region" aria-label="全景。拖动或用方向键转动视角，点击黄色作品点查看介绍。">
+     <div class="viewer-shade"></div>
+     <div class="scene-caption"><span class="scene-pin">⌖</span><div><h2 id="scene-title">展览厅 3</h2><span id="scene-floor">一楼展厅</span></div></div>
+     <button class="icon-button fullscreen-button" id="fullscreen" aria-label="全屏漫游" title="全屏漫游"><svg viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg></button>
+     <svg id="art-regions" class="art-regions" aria-hidden="true"></svg>
+     <div id="hotspots" class="hotspots"></div>
+     <div class="viewer-loading"><div class="loading-dots"><i></i><i></i><i></i></div><p>推开三毛家的门…</p><button id="retry" hidden>再试一次</button></div>
+     <div class="viewer-tip" id="viewer-tip"><span class="drag-icon">↔</span><span>拖动画面，四处看看</span><span class="tip-divider"></span><span class="tiny-dot">＋</span><span>点开作品</span><button id="dismiss-tip" aria-label="关闭操作提示">×</button></div>
+     <div class="view-controls"><button id="rotate" class="icon-button" aria-label="开始自动环顾" title="自动环顾"><svg viewBox="0 0 24 24"><path d="M20 8a8 8 0 1 0 0 8M20 3v5h-5"/></svg></button><div class="zoom-controls"><button id="zoom-in" aria-label="放大" title="放大">＋</button><button id="zoom-out" aria-label="缩小" title="缩小">−</button></div><button id="reset" class="icon-button" aria-label="回到初始视角" title="回到初始视角"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><path d="m15 9-2 4-4 2 2-4Z"/></svg></button></div>
+    </div>
+    <div class="scene-strip"><button id="previous-room" class="strip-arrow" aria-label="上一处">←</button><div class="scene-note"><span id="scene-position">05 / 12</span><p id="scene-description">停一停，看看墙上的故事。</p></div><button id="room-artworks" class="room-artworks">本室作品 <span id="room-art-count">3</span><span>↗</span></button><button id="next-room" class="strip-arrow" aria-label="下一处">→</button></div>
+   </section>
+  </div>
+ </section>
+ <section id="collection-page" class="page collection-page" hidden>
+  <div class="page-intro"><div><p class="place-label">张乐平笔下的童年</p><h1>三根头发，<span class="title-highlight">好多故事</span>。</h1></div><span class="collection-total">20 件数字作品</span></div>
+  <div class="collection-toolbar"><div class="collection-filters" role="group" aria-label="作品分类"><button class="active" data-filter="all">全部作品</button><button data-filter="onsite">展厅里的画</button><button data-filter="early">机灵的小三毛</button><button data-filter="wandering">流浪的日子</button><button data-filter="life">长大的快乐</button></div><button id="clear-room-filter" hidden>查看全部 ×</button></div>
+  <div id="artwork-grid" class="artwork-grid"></div>
+ </section>
+</main>
+<footer class="site-footer"><span>三根头发，一个永远的童年。</span><button id="sources-open">素材来源</button><span>和三毛一起，慢慢看 <span class="footer-star">✳</span></span></footer>
+<dialog id="art-dialog" class="art-dialog" aria-labelledby="art-title"><button class="dialog-close" aria-label="关闭作品介绍">×</button><div class="art-detail-image"><img id="art-image" alt=""><button id="image-zoom" aria-label="放大作品">↗ 放大看</button></div><div class="art-detail-copy"><p id="art-series" class="art-series"></p><h2 id="art-title"></h2><p class="art-author">张乐平 <span id="art-year"></span></p><div class="small-squiggle" aria-hidden="true">﹏﹏﹏</div><p id="art-description"></p><div class="art-source"><span>官网选页 · 线上关联展品</span><a id="art-source-link" target="_blank" rel="noopener noreferrer">查看原始页面 ↗</a></div><div class="art-actions"><button id="locate-art">去展厅看看 <span>→</span></button><button id="next-art" aria-label="下一件作品">下一件 ↗</button></div></div></dialog>
+<dialog id="about-dialog" class="about-dialog" aria-labelledby="about-title"><button class="dialog-close" aria-label="关闭">×</button><img class="about-sanmao" src="assets/sanmao.png" alt="三毛"><p class="place-label">欢迎做客</p><h2 id="about-title">一座小屋，<br>装着好多童年。</h2><p>走进上海五原路的张乐平旧居，顺着全景里的箭头穿过房间，点点墙上与展柜上的黄色圆点，读一则三毛的故事。</p><dl><dt>空间影像</dt><dd>“建筑可阅读”张乐平故居 VR 的本地镜像，保留 12 个实拍全景位置。</dd><dt>漫画作品</dt><dd>sanmao.com.cn 官网本地镜像。包含 8 幅经画面比对的展厅作品、12 件三毛漫画选页；漫画年代为官网标注的系列时间。</dd><dt>线上策展</dt><dd>墙画点击点依据实景与官网图像比对配置；展柜上的三毛入口为延伸阅读，在作品介绍中单独注明。</dd></dl><div class="source-links"><a href="https://wtscvr.xh.sh.cn/vtour/v25.xml" target="_blank" rel="noopener noreferrer">全景来源 ↗</a><a href="https://www.sanmao.com.cn/" target="_blank" rel="noopener noreferrer">三毛官网 ↗</a></div></dialog>
+<dialog id="image-dialog" class="image-dialog" aria-label="作品大图"><button class="dialog-close" aria-label="关闭大图">×</button><img id="large-art" alt=""></dialog>
+<div class="toast" id="toast" role="status"></div>
+<script src="assets/three.min.js"></script><script src="scenes.js"></script><script src="artworks.js"></script><script src="app.js"></script>
+</body>
+</html>
