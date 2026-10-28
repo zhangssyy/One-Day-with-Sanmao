@@ -10,7 +10,8 @@
       "description": "三毛对着镜子，用烤热的火钳给三根头发烫卷。一个小小的模仿动作，让爱漂亮又顽皮的孩子跃然纸上。",
       "image": "assets/artworks/fashion.gif",
       "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/01zaoqi/01.htm",
-      "sourceLocal": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/01zaoqi/01.htm"
+      "sourceLocal": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/01zaoqi/01.htm",
+      "theme": "early"
     },
     {
       "id": "reuse",
@@ -20,7 +21,8 @@
       "description": "一件写着广告的雨衣，成了三毛在烈日下玩水的理由。四格漫画把孩子出人意料的机灵，藏在最后一个画面里。",
       "image": "assets/artworks/reuse.gif",
       "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/01zaoqi/02.htm",
-      "sourceLocal": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/01zaoqi/02.htm"
+      "sourceLocal": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/01zaoqi/02.htm",
+      "theme": "early"
     },
     {
       "id": "army",
@@ -30,7 +32,8 @@
       "description": "面对体形悬殊的军人，三毛抬头、点头，又被撞得向后仰倒。人物的大小与动作形成鲜明反差，构成无声的讽刺。",
       "image": "assets/artworks/army.gif",
       "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/02congjun/01.htm",
-      "sourceLocal": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/02congjun/01.htm"
+      "sourceLocal": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/02congjun/01.htm",
+      "theme": "wandering"
     },
     {
       "id": "doorbell",
@@ -40,7 +43,8 @@
       "description": "告示写着“叩门请使用手”，三毛却因此遭到一顿拳脚。结尾里，告示上的“手”被改成了“脚”，幽默背后带着辛酸。",
       "image": "assets/artworks/doorbell.gif",
       "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/03waizhuan/01.htm",
-      "sourceLocal": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/03waizhuan/01.htm"
+      "sourceLocal": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/03waizhuan/01.htm",
+      "theme": "wandering"
     },
     {
       "id": "alone",
@@ -50,7 +54,8 @@
       "description": "小鸡、小狗、小猫都有依靠，只有三毛独自走过街头。连续的对照与最后落下的眼泪，诉说着流浪孩子对家的渴望。",
       "image": "assets/artworks/alone.gif",
       "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/04liulang/01.htm",
-      "sourceLocal": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/04liulang/01.htm"
+      "sourceLocal": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/04liulang/01.htm",
+      "theme": "wandering"
     },
     {
       "id": "sharing",
@@ -60,7 +65,8 @@
       "description": "面对饥饿的老人，三毛先掰下一块食物，最后把剩下的也递了过去。几格细微的动作，画出了困境中仍愿意分享的善良。",
       "image": "assets/artworks/sharing.gif",
       "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/04liulang/02.htm",
-      "sourceLocal": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/04liulang/02.htm"
+      "sourceLocal": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/04liulang/02.htm",
+      "theme": "wandering"
     },
     {
       "id": "meeting",
@@ -70,7 +76,8 @@
       "description": "三毛模仿大人召集伙伴开会，孩子们坐在一起，听他一本正经地讲话。日常生活中的观察，在漫画里变成了童趣。",
       "image": "assets/artworks/meeting.gif",
       "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/05riji/01.htm",
-      "sourceLocal": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/05riji/01.htm"
+      "sourceLocal": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/05riji/01.htm",
+      "theme": "life"
     },
     {
       "id": "flowers",
@@ -80,7 +87,8 @@
       "description": "起床、洗漱，再来到窗边浇花。安稳的室内与盛开的花朵，展现了三毛生活中的新气象。",
       "image": "assets/artworks/flowers.gif",
       "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/07jinxi/01.htm",
-      "sourceLocal": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/07jinxi/01.htm"
+      "sourceLocal": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/07jinxi/01.htm",
+      "theme": "life"
     },
     {
       "id": "helping",
@@ -90,7 +98,8 @@
       "description": "三毛拿起扫帚清扫环境，旁观的人起初发笑，后来越来越多的孩子加入。行动与旁观的对照，把问题留给了读者。",
       "image": "assets/artworks/helping.gif",
       "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/09xueleifeng/01.htm",
-      "sourceLocal": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/09xueleifeng/01.htm"
+      "sourceLocal": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/09xueleifeng/01.htm",
+      "theme": "life"
     },
     {
       "id": "running",
@@ -100,7 +109,8 @@
       "description": "从春日跑到冬天，伙伴有时停下休息，三毛仍继续练习。四格中的季节变化，最终汇成冲过终点的一个瞬间。",
       "image": "assets/artworks/running.gif",
       "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/10tiyu/01.htm",
-      "sourceLocal": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/10tiyu/01.htm"
+      "sourceLocal": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/10tiyu/01.htm",
+      "theme": "life"
     },
     {
       "id": "portrait",
@@ -110,7 +120,8 @@
       "description": "两个孩子轮流给对方画像，一幅意想不到的机械形象出现在纸上。漫画用孩子间的游戏，把科学想象带进日常生活。",
       "image": "assets/artworks/portrait.gif",
       "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/11aikexue/02.htm",
-      "sourceLocal": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/11aikexue/02.htm"
+      "sourceLocal": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/11aikexue/02.htm",
+      "theme": "life"
     },
     {
       "id": "buddha",
@@ -120,7 +131,8 @@
       "description": "三毛与伙伴爬上大佛的脚背，人物一下显得格外小。画面利用鲜明的尺度反差，让旅途见闻变成充满童趣的体验。",
       "image": "assets/artworks/buddha.gif",
       "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/12luyouji/02.htm",
-      "sourceLocal": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/12luyouji/02.htm"
+      "sourceLocal": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/12luyouji/02.htm",
+      "theme": "life"
     },
     {
       "id": "refugees",
@@ -134,7 +146,8 @@
       "scene": "scene_9",
       "ath": -129.72,
       "atv": -12.86,
-      "matched": true
+      "matched": true,
+      "theme": "onsite"
     },
     {
       "id": "guests",
@@ -148,7 +161,8 @@
       "scene": "scene_9",
       "ath": 30.48,
       "atv": -18.37,
-      "matched": true
+      "matched": true,
+      "theme": "onsite"
     },
     {
       "id": "airport",
@@ -162,7 +176,8 @@
       "scene": "scene_9",
       "ath": -148.43,
       "atv": -12.51,
-      "matched": true
+      "matched": true,
+      "theme": "onsite"
     },
     {
       "id": "hungry",
@@ -176,7 +191,8 @@
       "scene": "scene_9",
       "ath": -162.1,
       "atv": 2.98,
-      "matched": true
+      "matched": true,
+      "theme": "onsite"
     },
     {
       "id": "wealth",
@@ -190,7 +206,8 @@
       "scene": "scene_9",
       "ath": 90.9,
       "atv": -4.47,
-      "matched": true
+      "matched": true,
+      "theme": "onsite"
     },
     {
       "id": "hen",
@@ -204,7 +221,8 @@
       "scene": "scene_2",
       "ath": -110.56,
       "atv": -13.97,
-      "matched": true
+      "matched": true,
+      "theme": "onsite"
     },
     {
       "id": "peas",
@@ -218,7 +236,8 @@
       "scene": "scene_2",
       "ath": -110.56,
       "atv": -5.57,
-      "matched": true
+      "matched": true,
+      "theme": "onsite"
     },
     {
       "id": "corn",
@@ -232,7 +251,427 @@
       "scene": "scene_2",
       "ath": -110.56,
       "atv": 3.35,
-      "matched": true
+      "matched": true,
+      "theme": "onsite"
+    },
+    {
+      "id": "mischief",
+      "title": "是他顽皮",
+      "year": "1935—1937",
+      "series": "早期三毛",
+      "description": "三毛用弹弓击落小鸟，却把弹弓塞给一旁的雕像。最后一格的“嫁祸”，把孩子的顽皮和小聪明一起画了出来。",
+      "image": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/01zaoqi/pictures/03_shitawanpi.gif",
+      "sourceLocal": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/01zaoqi/03.htm",
+      "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/01zaoqi/03.htm",
+      "theme": "early",
+      "sourceTitle": "早期三毛-是他顽皮"
+    },
+    {
+      "id": "strongman",
+      "title": "大力士",
+      "year": "1935—1937",
+      "series": "早期三毛",
+      "description": "三毛被安排和杠铃一起倒立，照片翻转后却成了举起重物的“大力士”。画面与真实发生的事情，原来可以完全不同。",
+      "image": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/01zaoqi/pictures/08_dalishi.gif",
+      "sourceLocal": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/01zaoqi/08.htm",
+      "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/01zaoqi/08.htm",
+      "theme": "early",
+      "sourceTitle": "早期三毛-大力士"
+    },
+    {
+      "id": "fairtrade",
+      "title": "公平交易",
+      "year": "1935—1937",
+      "series": "早期三毛",
+      "description": "三毛与伙伴用天平分食物，却一边吃一边改变两边的分量。一本正经的“公平”，在孩子的小动作里露出了破绽。",
+      "image": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/01zaoqi/pictures/07_gongpingjiaoyi.gif",
+      "sourceLocal": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/01zaoqi/07.htm",
+      "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/01zaoqi/07.htm",
+      "theme": "early",
+      "sourceTitle": "早期三毛-公平交易"
+    },
+    {
+      "id": "armyhat",
+      "title": "《三毛从军记》选页二",
+      "year": "1946",
+      "series": "三毛从军记",
+      "description": "三毛对着镜子模仿军人的样子，换来的头盔却把小小的脑袋罩住。装束与身体的反差，是张乐平常用的无声笑料。",
+      "image": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/02congjun/pictures/02.gif",
+      "sourceLocal": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/02congjun/02.htm",
+      "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/02congjun/02.htm",
+      "theme": "wandering",
+      "sourceTitle": "三毛从军记"
+    },
+    {
+      "id": "armylog",
+      "title": "《三毛从军记》选页四",
+      "year": "1946",
+      "series": "三毛从军记",
+      "description": "三毛和两个高个子士兵一起扛木头。木头抬上肩头后，他的双脚也离开地面；身高的差距，变成令人难忘的漫画瞬间。",
+      "image": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/02congjun/pictures/04.gif",
+      "sourceLocal": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/02congjun/04.htm",
+      "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/02congjun/04.htm",
+      "theme": "wandering",
+      "sourceTitle": "三毛从军记"
+    },
+    {
+      "id": "shortdream",
+      "title": "好梦不长",
+      "year": "1947—1949",
+      "series": "三毛流浪记",
+      "description": "三毛蜷在小车里睡觉，小车被拉到炉边，接着装进滚烫的东西。一个短暂的安睡之梦，被现实突然打断。",
+      "image": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/04liulang/pictures/05_haomengbuchang.gif",
+      "sourceLocal": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/04liulang/05.htm",
+      "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/04liulang/05.htm",
+      "theme": "wandering",
+      "sourceTitle": "三毛流浪记-好梦不长"
+    },
+    {
+      "id": "firstpractice",
+      "title": "初学乍练",
+      "year": "1947—1949",
+      "series": "三毛流浪记",
+      "description": "三毛跟着大人学抛接鸡蛋，轮到自己时却把鸡蛋全砸在头上。笨拙的初次尝试，让谋生的艰难藏在滑稽的动作之中。",
+      "image": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/04liulang/pictures/07_chuxue.gif",
+      "sourceLocal": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/04liulang/07.htm",
+      "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/04liulang/07.htm",
+      "theme": "wandering",
+      "sourceTitle": "三毛流浪记-初学乍练"
+    },
+    {
+      "id": "bread",
+      "title": "我要面包",
+      "year": "1947—1949",
+      "series": "三毛流浪记",
+      "description": "面对圣诞老人，三毛指向自己的嘴。童话里的礼物与街头孩子的饥饿形成对照，“我要面包”成了最直接的愿望。",
+      "image": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/04liulang/pictures/14_woyaomianbao.gif",
+      "sourceLocal": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/04liulang/14.htm",
+      "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/04liulang/14.htm",
+      "theme": "wandering",
+      "sourceTitle": "三毛流浪记-我要面包"
+    },
+    {
+      "id": "mirror",
+      "title": "大家照照看",
+      "year": "1950—1965",
+      "series": "三毛日记",
+      "description": "伙伴们争吵起来，三毛把镜子搬到他们面前。镜中的表情让孩子们看见自己的模样，日常的小摩擦也有了幽默的解法。",
+      "image": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/05riji/pictures/02_dajiazhaozhaokan.gif",
+      "sourceLocal": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/05riji/02.htm",
+      "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/05riji/02.htm",
+      "theme": "life",
+      "sourceTitle": "三毛日记-大家照照看"
+    },
+    {
+      "id": "raincoat",
+      "title": "叔叔的雨衣",
+      "year": "1950—1965",
+      "series": "三毛日记",
+      "description": "大雨中，一位叔叔用宽大的雨衣护住孩子们。雨衣撑起的小小空间，把人与人之间的照顾画得温暖而具体。",
+      "image": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/05riji/pictures/03_shushudeyuyi.gif",
+      "sourceLocal": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/05riji/03.htm",
+      "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/05riji/03.htm",
+      "theme": "life",
+      "sourceTitle": "三毛日记-叔叔的雨衣"
+    },
+    {
+      "id": "practice",
+      "title": "功到自然成",
+      "year": "1978—1979",
+      "series": "三毛与体育",
+      "description": "三毛把树枝、砖块变成练习器具，最终举起真正的杠铃。从简陋的开始到练习的结果，几格漫画写出了坚持的力量。",
+      "image": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/10tiyu/pictures/02_gongdaozirancheng.gif",
+      "sourceLocal": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/10tiyu/02.htm",
+      "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/10tiyu/02.htm",
+      "theme": "life",
+      "sourceTitle": "三毛与体育-功到自然成"
+    },
+    {
+      "id": "mingtomb",
+      "title": "明孝陵",
+      "year": "1980—1981",
+      "series": "三毛旅游记",
+      "description": "游览途中突然下起大雨，孩子们忙着寻找遮挡，古老的石刻也进入故事。旅行见闻被编成一段带着意外转折的童趣漫画。",
+      "image": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/12luyouji/pictures/01_mingxiaoling.gif",
+      "sourceLocal": "/Users/sia./大三课程/人居设计/三毛漫画资料库/sanmao.com.cn官网镜像/father/artwork/comic/sanmao/12luyouji/01.htm",
+      "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/12luyouji/01.htm",
+      "theme": "life",
+      "sourceTitle": "三毛旅游记-明孝陵"
+    }
+  ],
+  "observationSources": [
+    {
+      "id": "door-plaque",
+      "scene": "scene_3",
+      "face": "l",
+      "x": 264,
+      "y": 342,
+      "title": "找到这扇门",
+      "object": "入口竹篱旁的故居铭牌",
+      "question": "门旁的牌子写着谁的名字？",
+      "options": [
+        "张乐平",
+        "柯灵",
+        "巴金"
+      ],
+      "answer": 0,
+      "explanation": "入口的小铭牌上写着“张乐平故居”。从这扇门走进去，就到了本次探访的小屋。",
+      "ath": -107.35,
+      "atv": -5.96,
+      "source": "建筑可阅读-VR/assets/panos/zhang/3.tiles/l",
+      "evidence": "已目视核对本地全景；坐标由 768×768 立方面像素换算，需在网页最终视角复核。"
+    },
+    {
+      "id": "garden-path",
+      "scene": "scene_4",
+      "face": "r",
+      "x": 365,
+      "y": 600,
+      "title": "花园里的小路",
+      "object": "草坪中的石板步道",
+      "question": "草坪里的小路是用什么铺成的？",
+      "options": [
+        "鹅卵石",
+        "一块块方形石板",
+        "红砖"
+      ],
+      "answer": 1,
+      "explanation": "方形石板一块接着一块，穿过草坪，通向花园深处。",
+      "ath": 87.17,
+      "atv": 29.33,
+      "source": "建筑可阅读-VR/assets/panos/zhang/4.tiles/r",
+      "evidence": "已目视核对本地全景；坐标由 768×768 立方面像素换算，需在网页最终视角复核。"
+    },
+    {
+      "id": "red-stairs",
+      "scene": "scene_6",
+      "face": "b",
+      "x": 165,
+      "y": 605,
+      "title": "跟着红色上楼",
+      "object": "通往二楼的红毯木楼梯",
+      "question": "通往二楼的楼梯上铺着什么颜色的地毯？",
+      "options": [
+        "绿色",
+        "蓝色",
+        "红色"
+      ],
+      "answer": 2,
+      "explanation": "红色地毯顺着木楼梯向上延伸。这里连接一楼展厅与二楼的生活空间。",
+      "ath": 150.3,
+      "atv": 26.56,
+      "source": "建筑可阅读-VR/assets/panos/zhang/6.tiles/b",
+      "evidence": "已目视核对本地全景；坐标由 768×768 立方面像素换算，需在网页最终视角复核。"
+    },
+    {
+      "id": "hallway-photos",
+      "scene": "scene_13",
+      "face": "f",
+      "x": 634,
+      "y": 330,
+      "title": "过道里的回忆",
+      "object": "过道墙上的装框照片",
+      "question": "走上二楼，过道墙上能看到什么？",
+      "options": [
+        "一排装框照片",
+        "一排挂钟",
+        "一排帽子"
+      ],
+      "answer": 0,
+      "explanation": "墙上挂着装框的照片。过道把书房、卧室和孩子的房间连在一起。",
+      "ath": 33.07,
+      "atv": -6.72,
+      "source": "建筑可阅读-VR/assets/panos/zhang/13.tiles/f",
+      "evidence": "已目视核对本地全景；坐标由 768×768 立方面像素换算，需在网页最终视角复核。"
+    },
+    {
+      "id": "study-books",
+      "scene": "scene_11",
+      "face": "r",
+      "x": 475,
+      "y": 310,
+      "title": "书柜里的世界",
+      "object": "书房玻璃门书柜",
+      "question": "透过书柜上半部的玻璃门，可以看到什么？",
+      "options": [
+        "整排餐盘",
+        "许多书籍",
+        "一排玩具车"
+      ],
+      "answer": 1,
+      "explanation": "木框玻璃门后，书籍整齐地排列着。近看柜门与书脊，能感受到这间屋子的阅读气息。",
+      "ath": 103.33,
+      "atv": -10.62,
+      "source": "建筑可阅读-VR/assets/panos/zhang/11.tiles/r",
+      "evidence": "已目视核对本地全景；坐标由 768×768 立方面像素换算，需在网页最终视角复核。"
+    },
+    {
+      "id": "study-desk",
+      "scene": "scene_11",
+      "face": "b",
+      "x": 563,
+      "y": 490,
+      "title": "桌上的一点绿",
+      "object": "书房大桌上的绿植",
+      "question": "大桌上，哪一件东西为房间添了一点绿色？",
+      "options": [
+        "绿色台灯",
+        "绿色电话",
+        "一盆植物"
+      ],
+      "answer": 2,
+      "explanation": "桌上摆着一盆细长叶子的植物，旁边还能看到纸张和器物。",
+      "ath": -155.01,
+      "atv": 14.05,
+      "source": "建筑可阅读-VR/assets/panos/zhang/11.tiles/b",
+      "evidence": "已目视核对本地全景；坐标由 768×768 立方面像素换算，需在网页最终视角复核。"
+    },
+    {
+      "id": "bedroom-clock",
+      "scene": "scene_12",
+      "face": "f",
+      "x": 529,
+      "y": 420,
+      "title": "小屋的时间",
+      "object": "卧室柜子上的座钟",
+      "question": "蕾丝布覆盖的柜子上，摆着哪件计时物品？",
+      "options": [
+        "木壳座钟",
+        "沙漏",
+        "电子闹钟"
+      ],
+      "answer": 0,
+      "explanation": "柜子上有一座木壳圆盘座钟。它与照片、家具共同组成了这里的日常陈设。",
+      "ath": 20.69,
+      "atv": 5.01,
+      "source": "建筑可阅读-VR/assets/panos/zhang/12.tiles/f",
+      "evidence": "已目视核对本地全景；坐标由 768×768 立方面像素换算，需在网页最终视角复核。"
+    },
+    {
+      "id": "bedroom-lamps",
+      "scene": "scene_12",
+      "face": "r",
+      "x": 404,
+      "y": 503,
+      "title": "床边的暖色",
+      "object": "卧室床头旁的台灯",
+      "question": "床头台灯的灯罩是什么颜色？",
+      "options": [
+        "蓝色",
+        "红色",
+        "绿色"
+      ],
+      "answer": 1,
+      "explanation": "床的两侧都能看到红色灯罩，与木质床头和房间里的红地毯呼应。",
+      "ath": 92.98,
+      "atv": 17.2,
+      "source": "建筑可阅读-VR/assets/panos/zhang/12.tiles/r",
+      "evidence": "已目视核对本地全景；坐标由 768×768 立方面像素换算，需在网页最终视角复核。"
+    },
+    {
+      "id": "child-bed-desk",
+      "scene": "scene_1",
+      "face": "b",
+      "x": 255,
+      "y": 574,
+      "title": "小小学习角",
+      "object": "孩子房间床边的小书桌",
+      "question": "小书桌紧挨着哪件家具？",
+      "options": [
+        "衣帽架",
+        "沙发",
+        "床"
+      ],
+      "answer": 2,
+      "explanation": "窄窄的小书桌紧贴在床边，学习与休息的空间挨在一起。",
+      "ath": 161.43,
+      "atv": 25.13,
+      "source": "建筑可阅读-VR/assets/panos/zhang/1.tiles/b",
+      "evidence": "已目视核对本地全景；坐标由 768×768 立方面像素换算，需在网页最终视角复核。"
+    },
+    {
+      "id": "child-bookcase",
+      "scene": "scene_1",
+      "face": "r",
+      "x": 401,
+      "y": 338,
+      "title": "另一间房的书香",
+      "object": "孩子房间书柜",
+      "question": "这间房的书柜下半部，可以看到什么装饰？",
+      "options": [
+        "人物画",
+        "纯色玻璃",
+        "镜面"
+      ],
+      "answer": 0,
+      "explanation": "书柜上半部放书，下半部的柜门上能看到人物画，房间因此多了一点活泼。",
+      "ath": 92.53,
+      "atv": -6.82,
+      "source": "建筑可阅读-VR/assets/panos/zhang/1.tiles/r",
+      "evidence": "已目视核对本地全景；坐标由 768×768 立方面像素换算，需在网页最终视角复核。"
+    },
+    {
+      "id": "artist-bust",
+      "scene": "scene_7",
+      "face": "f",
+      "x": 468,
+      "y": 350,
+      "title": "先认识画画的人",
+      "object": "前言旁的张乐平半身雕像",
+      "question": "前言旁的雕像采用哪种形式？",
+      "options": [
+        "全身坐像",
+        "半身像",
+        "全身立像"
+      ],
+      "answer": 1,
+      "explanation": "白色台座上是一尊半身像。它就在展厅前言旁，迎接进入展线的观众。",
+      "ath": 12.34,
+      "atv": -4.94,
+      "source": "建筑可阅读-VR/assets/panos/zhang/7.tiles/f",
+      "evidence": "已目视核对本地全景；坐标由 768×768 立方面像素换算，需在网页最终视角复核。"
+    },
+    {
+      "id": "moving-image",
+      "scene": "scene_8",
+      "face": "r",
+      "x": 343,
+      "y": 355,
+      "title": "画面也会动",
+      "object": "门洞后投影幕上的三毛影像",
+      "question": "从门洞望过去，三毛的影像出现在什么上面？",
+      "options": [
+        "纸质画册",
+        "电视机",
+        "投影幕"
+      ],
+      "answer": 2,
+      "explanation": "门洞后是一块投影幕，画面中能看到三毛的轮廓。漫画故事在这里换了一种呈现方式。",
+      "ath": 83.91,
+      "atv": -4.29,
+      "source": "建筑可阅读-VR/assets/panos/zhang/8.tiles/r",
+      "evidence": "已目视核对本地全景；坐标由 768×768 立方面像素换算，需在网页最终视角复核。"
+    },
+    {
+      "id": "visitor-notes",
+      "scene": "scene_10",
+      "face": "b",
+      "x": 548,
+      "y": 445,
+      "title": "大家的三毛",
+      "object": "展线末端的彩色便签留言墙",
+      "question": "这片留言墙主要由什么组成？",
+      "options": [
+        "彩色便签纸",
+        "木质牌子",
+        "金属铭牌"
+      ],
+      "answer": 0,
+      "explanation": "许多彩色便签叠在一起，记录着参观者留下的话。你也可以想一想，最想把哪一则三毛故事带走。",
+      "ath": -156.87,
+      "atv": 8.31,
+      "source": "建筑可阅读-VR/assets/panos/zhang/10.tiles/b",
+      "evidence": "已目视核对本地全景；坐标由 768×768 立方面像素换算，需在网页最终视角复核。"
     }
   ]
 }

@@ -6,7 +6,8 @@ window.MUSEUM_ARTWORKS = [
     "series": "早期三毛",
     "description": "三毛对着镜子，用烤热的火钳给三根头发烫卷。一个小小的模仿动作，让爱漂亮又顽皮的孩子跃然纸上。",
     "image": "assets/artworks/fashion.gif",
-    "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/01zaoqi/01.htm"
+    "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/01zaoqi/01.htm",
+    "theme": "early"
   },
   {
     "id": "reuse",
@@ -15,7 +16,8 @@ window.MUSEUM_ARTWORKS = [
     "series": "早期三毛",
     "description": "一件写着广告的雨衣，成了三毛在烈日下玩水的理由。四格漫画把孩子出人意料的机灵，藏在最后一个画面里。",
     "image": "assets/artworks/reuse.gif",
-    "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/01zaoqi/02.htm"
+    "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/01zaoqi/02.htm",
+    "theme": "early"
   },
   {
     "id": "army",
@@ -24,7 +26,8 @@ window.MUSEUM_ARTWORKS = [
     "series": "三毛从军记",
     "description": "面对体形悬殊的军人，三毛抬头、点头，又被撞得向后仰倒。人物的大小与动作形成鲜明反差，构成无声的讽刺。",
     "image": "assets/artworks/army.gif",
-    "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/02congjun/01.htm"
+    "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/02congjun/01.htm",
+    "theme": "wandering"
   },
   {
     "id": "doorbell",
@@ -33,7 +36,8 @@ window.MUSEUM_ARTWORKS = [
     "series": "三毛外传",
     "description": "告示写着“叩门请使用手”，三毛却因此遭到一顿拳脚。结尾里，告示上的“手”被改成了“脚”，幽默背后带着辛酸。",
     "image": "assets/artworks/doorbell.gif",
-    "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/03waizhuan/01.htm"
+    "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/03waizhuan/01.htm",
+    "theme": "wandering"
   },
   {
     "id": "alone",
@@ -42,7 +46,8 @@ window.MUSEUM_ARTWORKS = [
     "series": "三毛流浪记",
     "description": "小鸡、小狗、小猫都有依靠，只有三毛独自走过街头。连续的对照与最后落下的眼泪，诉说着流浪孩子对家的渴望。",
     "image": "assets/artworks/alone.gif",
-    "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/04liulang/01.htm"
+    "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/04liulang/01.htm",
+    "theme": "wandering"
   },
   {
     "id": "sharing",
@@ -51,7 +56,8 @@ window.MUSEUM_ARTWORKS = [
     "series": "三毛流浪记",
     "description": "面对饥饿的老人，三毛先掰下一块食物，最后把剩下的也递了过去。几格细微的动作，画出了困境中仍愿意分享的善良。",
     "image": "assets/artworks/sharing.gif",
-    "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/04liulang/02.htm"
+    "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/04liulang/02.htm",
+    "theme": "wandering"
   },
   {
     "id": "meeting",
@@ -60,7 +66,8 @@ window.MUSEUM_ARTWORKS = [
     "series": "三毛日记",
     "description": "三毛模仿大人召集伙伴开会，孩子们坐在一起，听他一本正经地讲话。日常生活中的观察，在漫画里变成了童趣。",
     "image": "assets/artworks/meeting.gif",
-    "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/05riji/01.htm"
+    "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/05riji/01.htm",
+    "theme": "life"
   },
   {
     "id": "flowers",
@@ -69,7 +76,8 @@ window.MUSEUM_ARTWORKS = [
     "series": "三毛今昔",
     "description": "起床、洗漱，再来到窗边浇花。安稳的室内与盛开的花朵，展现了三毛生活中的新气象。",
     "image": "assets/artworks/flowers.gif",
-    "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/07jinxi/01.htm"
+    "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/07jinxi/01.htm",
+    "theme": "life"
   },
   {
     "id": "helping",
@@ -78,7 +86,8 @@ window.MUSEUM_ARTWORKS = [
     "series": "三毛学雷锋",
     "description": "三毛拿起扫帚清扫环境，旁观的人起初发笑，后来越来越多的孩子加入。行动与旁观的对照，把问题留给了读者。",
     "image": "assets/artworks/helping.gif",
-    "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/09xueleifeng/01.htm"
+    "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/09xueleifeng/01.htm",
+    "theme": "life"
   },
   {
     "id": "running",
@@ -87,7 +96,8 @@ window.MUSEUM_ARTWORKS = [
     "series": "三毛与体育",
     "description": "从春日跑到冬天，伙伴有时停下休息，三毛仍继续练习。四格中的季节变化，最终汇成冲过终点的一个瞬间。",
     "image": "assets/artworks/running.gif",
-    "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/10tiyu/01.htm"
+    "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/10tiyu/01.htm",
+    "theme": "life"
   },
   {
     "id": "portrait",
@@ -96,7 +106,8 @@ window.MUSEUM_ARTWORKS = [
     "series": "三毛爱科学",
     "description": "两个孩子轮流给对方画像，一幅意想不到的机械形象出现在纸上。漫画用孩子间的游戏，把科学想象带进日常生活。",
     "image": "assets/artworks/portrait.gif",
-    "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/11aikexue/02.htm"
+    "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/11aikexue/02.htm",
+    "theme": "life"
   },
   {
     "id": "buddha",
@@ -105,7 +116,8 @@ window.MUSEUM_ARTWORKS = [
     "series": "三毛旅游记",
     "description": "三毛与伙伴爬上大佛的脚背，人物一下显得格外小。画面利用鲜明的尺度反差，让旅途见闻变成充满童趣的体验。",
     "image": "assets/artworks/buddha.gif",
-    "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/12luyouji/02.htm"
+    "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/12luyouji/02.htm",
+    "theme": "life"
   },
   {
     "id": "refugees",
@@ -118,7 +130,8 @@ window.MUSEUM_ARTWORKS = [
     "scene": "scene_9",
     "ath": -129.72,
     "atv": -12.86,
-    "matched": true
+    "matched": true,
+    "theme": "onsite"
   },
   {
     "id": "guests",
@@ -131,7 +144,8 @@ window.MUSEUM_ARTWORKS = [
     "scene": "scene_9",
     "ath": 30.48,
     "atv": -18.37,
-    "matched": true
+    "matched": true,
+    "theme": "onsite"
   },
   {
     "id": "airport",
@@ -144,7 +158,8 @@ window.MUSEUM_ARTWORKS = [
     "scene": "scene_9",
     "ath": -148.43,
     "atv": -12.51,
-    "matched": true
+    "matched": true,
+    "theme": "onsite"
   },
   {
     "id": "hungry",
@@ -157,7 +172,8 @@ window.MUSEUM_ARTWORKS = [
     "scene": "scene_9",
     "ath": -162.1,
     "atv": 2.98,
-    "matched": true
+    "matched": true,
+    "theme": "onsite"
   },
   {
     "id": "wealth",
@@ -170,7 +186,8 @@ window.MUSEUM_ARTWORKS = [
     "scene": "scene_9",
     "ath": 90.9,
     "atv": -4.47,
-    "matched": true
+    "matched": true,
+    "theme": "onsite"
   },
   {
     "id": "hen",
@@ -183,7 +200,8 @@ window.MUSEUM_ARTWORKS = [
     "scene": "scene_2",
     "ath": -110.56,
     "atv": -13.97,
-    "matched": true
+    "matched": true,
+    "theme": "onsite"
   },
   {
     "id": "peas",
@@ -196,7 +214,8 @@ window.MUSEUM_ARTWORKS = [
     "scene": "scene_2",
     "ath": -110.56,
     "atv": -5.57,
-    "matched": true
+    "matched": true,
+    "theme": "onsite"
   },
   {
     "id": "corn",
@@ -209,6 +228,127 @@ window.MUSEUM_ARTWORKS = [
     "scene": "scene_2",
     "ath": -110.56,
     "atv": 3.35,
-    "matched": true
+    "matched": true,
+    "theme": "onsite"
+  },
+  {
+    "id": "mischief",
+    "title": "是他顽皮",
+    "year": "1935—1937",
+    "series": "早期三毛",
+    "description": "三毛用弹弓击落小鸟，却把弹弓塞给一旁的雕像。最后一格的“嫁祸”，把孩子的顽皮和小聪明一起画了出来。",
+    "image": "assets/artworks/mischief.gif",
+    "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/01zaoqi/03.htm",
+    "theme": "early"
+  },
+  {
+    "id": "strongman",
+    "title": "大力士",
+    "year": "1935—1937",
+    "series": "早期三毛",
+    "description": "三毛被安排和杠铃一起倒立，照片翻转后却成了举起重物的“大力士”。画面与真实发生的事情，原来可以完全不同。",
+    "image": "assets/artworks/strongman.gif",
+    "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/01zaoqi/08.htm",
+    "theme": "early"
+  },
+  {
+    "id": "fairtrade",
+    "title": "公平交易",
+    "year": "1935—1937",
+    "series": "早期三毛",
+    "description": "三毛与伙伴用天平分食物，却一边吃一边改变两边的分量。一本正经的“公平”，在孩子的小动作里露出了破绽。",
+    "image": "assets/artworks/fairtrade.gif",
+    "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/01zaoqi/07.htm",
+    "theme": "early"
+  },
+  {
+    "id": "armyhat",
+    "title": "《三毛从军记》选页二",
+    "year": "1946",
+    "series": "三毛从军记",
+    "description": "三毛对着镜子模仿军人的样子，换来的头盔却把小小的脑袋罩住。装束与身体的反差，是张乐平常用的无声笑料。",
+    "image": "assets/artworks/armyhat.gif",
+    "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/02congjun/02.htm",
+    "theme": "wandering"
+  },
+  {
+    "id": "armylog",
+    "title": "《三毛从军记》选页四",
+    "year": "1946",
+    "series": "三毛从军记",
+    "description": "三毛和两个高个子士兵一起扛木头。木头抬上肩头后，他的双脚也离开地面；身高的差距，变成令人难忘的漫画瞬间。",
+    "image": "assets/artworks/armylog.gif",
+    "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/02congjun/04.htm",
+    "theme": "wandering"
+  },
+  {
+    "id": "shortdream",
+    "title": "好梦不长",
+    "year": "1947—1949",
+    "series": "三毛流浪记",
+    "description": "三毛蜷在小车里睡觉，小车被拉到炉边，接着装进滚烫的东西。一个短暂的安睡之梦，被现实突然打断。",
+    "image": "assets/artworks/shortdream.gif",
+    "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/04liulang/05.htm",
+    "theme": "wandering"
+  },
+  {
+    "id": "firstpractice",
+    "title": "初学乍练",
+    "year": "1947—1949",
+    "series": "三毛流浪记",
+    "description": "三毛跟着大人学抛接鸡蛋，轮到自己时却把鸡蛋全砸在头上。笨拙的初次尝试，让谋生的艰难藏在滑稽的动作之中。",
+    "image": "assets/artworks/firstpractice.gif",
+    "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/04liulang/07.htm",
+    "theme": "wandering"
+  },
+  {
+    "id": "bread",
+    "title": "我要面包",
+    "year": "1947—1949",
+    "series": "三毛流浪记",
+    "description": "面对圣诞老人，三毛指向自己的嘴。童话里的礼物与街头孩子的饥饿形成对照，“我要面包”成了最直接的愿望。",
+    "image": "assets/artworks/bread.gif",
+    "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/04liulang/14.htm",
+    "theme": "wandering"
+  },
+  {
+    "id": "mirror",
+    "title": "大家照照看",
+    "year": "1950—1965",
+    "series": "三毛日记",
+    "description": "伙伴们争吵起来，三毛把镜子搬到他们面前。镜中的表情让孩子们看见自己的模样，日常的小摩擦也有了幽默的解法。",
+    "image": "assets/artworks/mirror.gif",
+    "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/05riji/02.htm",
+    "theme": "life"
+  },
+  {
+    "id": "raincoat",
+    "title": "叔叔的雨衣",
+    "year": "1950—1965",
+    "series": "三毛日记",
+    "description": "大雨中，一位叔叔用宽大的雨衣护住孩子们。雨衣撑起的小小空间，把人与人之间的照顾画得温暖而具体。",
+    "image": "assets/artworks/raincoat.gif",
+    "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/05riji/03.htm",
+    "theme": "life"
+  },
+  {
+    "id": "practice",
+    "title": "功到自然成",
+    "year": "1978—1979",
+    "series": "三毛与体育",
+    "description": "三毛把树枝、砖块变成练习器具，最终举起真正的杠铃。从简陋的开始到练习的结果，几格漫画写出了坚持的力量。",
+    "image": "assets/artworks/practice.gif",
+    "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/10tiyu/02.htm",
+    "theme": "life"
+  },
+  {
+    "id": "mingtomb",
+    "title": "明孝陵",
+    "year": "1980—1981",
+    "series": "三毛旅游记",
+    "description": "游览途中突然下起大雨，孩子们忙着寻找遮挡，古老的石刻也进入故事。旅行见闻被编成一段带着意外转折的童趣漫画。",
+    "image": "assets/artworks/mingtomb.gif",
+    "sourceUrl": "https://www.sanmao.com.cn/father/artwork/comic/sanmao/12luyouji/01.htm",
+    "theme": "life"
   }
 ];
