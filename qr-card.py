@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
 """把一个访问地址画成黄蓝配色的扫码卡片。
 
-用法: python3 qr-card.py <url> [输出文件]
-内网地址换一个网络就会变，所以卡片由演示脚本在每次开场时重新生成。
+用法: python3 qr-card.py [url] [输出文件]
+不给地址时用线上固定地址，任何网络都能扫。
+演示脚本会传入当前内网地址——那种地址换个网络就会变，所以每次开场重新生成。
 """
 import io
+import ipaddress
 import pathlib
 import sys
+from urllib.parse import urlsplit
 
 try:
     import segno
@@ -19,6 +22,7 @@ ROOT = pathlib.Path(__file__).resolve().parent
 CREAM, YELLOW, BLUE, INK, MUTED = '#FFFCF2', '#F5D977', '#245BCB', '#203D72', '#788399'
 W, H = 1000, 1400
 QUIET = 4  # 二维码静默区宽度（模块数），规范下限
+SITE = 'https://zhangssyy.github.io/One-Day-with-Sanmao/'
 
 FONT_FILE = next((p for p in ['/System/Library/Fonts/Hiragino Sans GB.ttc',
                               '/System/Library/Fonts/STHeiti Medium.ttc']
@@ -31,6 +35,14 @@ BOOK_INDEX = 0 if 'Hiragino' in FONT_FILE else 1
 
 def font(size, bold=False):
     return ImageFont.truetype(FONT_FILE, size, index=BOLD_INDEX if bold else BOOK_INDEX)
+
+
+def is_lan(url: str) -> bool:
+    host = urlsplit(url).hostname or ''
+    try:
+        return ipaddress.ip_address(host).is_private or ipaddress.ip_address(host).is_loopback
+    except ValueError:
+        return host in ('localhost', '')
 
 
 def build(url: str, out: pathlib.Path) -> None:
@@ -72,9 +84,16 @@ def build(url: str, out: pathlib.Path) -> None:
     card.paste(code, (W // 2 - code.width // 2, 330 + pad))
 
     below = panel[3] + 36
-    for text, size, colour, gap in [('连上同一个 WiFi，用手机扫一扫', 32, '#52627c', 54),
-                                    (url, 25, BLUE, 48),
-                                    ('演示电脑需保持开机、服务不要关闭', 22, '#A8AEBB', 0)]:
+    if is_lan(url):
+        lines = [('连上同一个 WiFi，用手机扫一扫', 32, '#52627c', 54),
+                 (url, 25, BLUE, 48),
+                 ('演示电脑需保持开机、服务不要关闭', 22, '#A8AEBB', 0)]
+    else:
+        # 固定地址不依赖现场网络，省掉那两句限制条件；地址去掉 https:// 更好读也更好手输
+        lines = [('用手机相机扫一扫', 32, '#52627c', 54),
+                 (url.split('://', 1)[-1].rstrip('/'), 25, BLUE, 48),
+                 ('任何网络都能打开', 22, '#A8AEBB', 0)]
+    for text, size, colour, gap in lines:
         f = font(size)
         d.text(((W - d.textlength(text, font=f)) / 2, below), text, font=f, fill=colour)
         below += gap
@@ -94,6 +113,5 @@ def build(url: str, out: pathlib.Path) -> None:
 
 
 if __name__ == '__main__':
-    if len(sys.argv) < 2:
-        sys.exit('用法: python3 qr-card.py <url> [输出文件]')
-    build(sys.argv[1], pathlib.Path(sys.argv[2] if len(sys.argv) > 2 else ROOT / '扫码访问.png'))
+    build(sys.argv[1] if len(sys.argv) > 1 else SITE,
+          pathlib.Path(sys.argv[2] if len(sys.argv) > 2 else ROOT / '扫码访问.png'))

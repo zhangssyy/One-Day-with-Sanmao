@@ -24,13 +24,16 @@ python3 -c "import segno" 2>/dev/null || python3 -m pip install --quiet --user s
 }
 
 URL="http://$IP:$PORT/"
-python3 qr-card.py "$URL" || exit 1
-open 扫码访问.png
+# 写到单独的文件，别覆盖掉指向线上固定地址的那张卡片
+CARD="扫码访问-内网.png"
+python3 qr-card.py "$URL" "$CARD" || exit 1
+open "$CARD"
 
 echo
 echo "  三毛虚拟博物馆 · 课堂演示"
 echo "  地址：$URL"
-echo "  手机连同一个 WiFi 后扫「扫码访问.png」即可。"
+echo "  手机连同一个 WiFi 后扫「$CARD」即可。"
+echo "  教室能上网的话，直接用「扫码访问.png」更稳妥。"
 echo "  若 macOS 弹出防火墙询问，请选择「允许」。"
 echo "  演示结束按 Control-C 停止。"
 echo
