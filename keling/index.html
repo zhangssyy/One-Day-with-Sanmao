@@ -8,8 +8,9 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="description" content="我和三毛的一天 · 第三站柯灵故居：晃一晃，从柯灵的文字里抽一枚书签带走。">
   <title>柯灵书签 · 我和三毛的一天</title>
-  <link rel="stylesheet" href="styles.css?v=1102b">
-  <link rel="preload" as="font" type="font/woff2" href="assets/serif.woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css?v=1102c">
+  <link rel="preload" as="font" type="font/woff2" href="assets/serif.woff2?v=1102c" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="assets/title.woff2?v=1102c" crossorigin>
   <link rel="preload" as="image" href="assets/tube.webp">
   <link rel="preload" as="image" href="assets/grain.webp">
 </head>
@@ -62,23 +63,23 @@
         <div class="hold">
           <article class="mark">
             <span class="ribbon" aria-hidden="true"></span>
-            <span class="eaves" aria-hidden="true"></span>
             <div class="face">
               <div class="text">
                 <blockquote class="quote" id="quote"></blockquote>
               </div>
               <span class="divider" aria-hidden="true"></span>
               <p class="by">
-                <span class="seal">柯灵</span>
-                <cite id="work"></cite>
+                <span class="seal" aria-hidden="true">柯灵</span>
+                <span class="credit">
+                  <cite id="work"></cite>
+                  <span id="year"></span>
+                </span>
               </p>
             </div>
           </article>
           <img class="sticker c-pen" src="assets/st-pen.webp" alt="" aria-hidden="true">
-          <img class="sticker c-book" src="assets/st-book.webp" alt="" aria-hidden="true">
         </div>
         <p class="imprint">
-          <span id="year"></span>
           <a id="src" target="_blank" rel="noopener noreferrer" hidden></a>
         </p>
       </section>
@@ -102,7 +103,7 @@
     <p class="sr" id="live" aria-live="polite" role="status"></p>
   </div>
 
-  <script src="quotes.js?v=1102b"></script>
-  <script src="app.js?v=1102b"></script>
+  <script src="quotes.js?v=1102c"></script>
+  <script src="app.js?v=1102c"></script>
 </body>
 </html>

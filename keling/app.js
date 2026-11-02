@@ -18,7 +18,7 @@
   const TONE = { "祝福": "bless", "启示": "insight", "启示与祝福": "both" };
 
   // [字号, 列宽]，由大到小。MARK_CHROME 是卡片内外框加内边距占掉的宽度。
-  const TYPE_STEPS = [[21, 44], [19, 40], [17, 36], [16, 33], [15, 31], [13, 28], [12, 25]];
+  const TYPE_STEPS = [[24, 48], [22, 45], [21, 42], [19, 39], [18, 36], [16, 33], [15, 31], [13, 28], [12, 25]];
   const MARK_CHROME = 54;
 
   const el = {};
@@ -84,7 +84,8 @@
   // 不能用 document.fonts.ready：脚本跑到这里时字体往往还没开始下载，
   // ready 当场就兑现了。显式发起加载，等它真到了再排。
   if (document.fonts && document.fonts.load) {
-    document.fonts.load('500 21px "KL Serif"', "柯灵").then(setType, setType);
+    document.fonts.load('600 24px "KL Serif"', "柯灵").then(setType, setType);
+    document.fonts.load('900 24px "KL Title"', "柯灵");
     document.fonts.addEventListener("loadingdone", setType);
   }
 
@@ -221,7 +222,7 @@
     // 换成一笔到底的二倍长破折号"⸺"。
     el.quote.textContent = quote.quote.replace(/——/g, "⸺");
     el.work.textContent = "《" + quote.work + "》";
-    el.year.textContent = quote.year || "";
+    el.year.textContent = quote.year ? "柯灵 · " + quote.year : "柯灵";
 
     const no = String(quotes.indexOf(quote) + 1).padStart(3, "0");
     el.serial.innerHTML = "<small>No.</small><b>" + no + "</b><small>/ " + quotes.length + "</small>";

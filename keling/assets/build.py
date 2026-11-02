@@ -283,42 +283,52 @@ def build_qr():
     return path
 
 
-FONT_SRC = os.path.join(RAW, "NotoSerifSC-Medium.otf")
-FONT_URL = "https://github.com/notofonts/noto-cjk/raw/main/Serif/SubsetOTF/SC/NotoSerifSC-Medium.otf"
+FONT_URL = "https://github.com/notofonts/noto-cjk/raw/main/Serif/SubsetOTF/SC/NotoSerifSC-%s.otf"
 
 
-def build_font():
-    """书签正文自带一份宋体子集。
+def page_text():
+    """页面上写死的字：index.html 的正文，加 app.js 里会换上去的那些提示语。"""
+    import re
 
-    iOS 和微信内置浏览器里没有宋体（Songti SC 要单独下载），正文会退成
-    苹方黑体，又粗又挤；安卓更是各家不同。海报要在谁手机上截出来都一样，
-    就只能自带字体。整套思源宋体 11 MB，这里只留签文、篇名和页面上真正
-    出现过的字，压成 WOFF2。
+    root = os.path.join(HERE, "..")
+    with open(os.path.join(root, "index.html"), encoding="utf-8") as f:
+        text = re.sub(r"<[^>]+>", "", f.read())
+    with open(os.path.join(root, "app.js"), encoding="utf-8") as f:
+        text += "".join(re.findall(r'"([^"\n]*)"', f.read()))
+    return text + "0123456789No./ ·—"
+
+
+def build_font(weight, name, quotes):
+    """自带宋体子集。
+
+    iOS 和微信内置浏览器里没有宋体（Songti SC 要单独下载），会退成苹方
+    黑体；安卓更是各家不同。海报要在谁手机上截出来都一样，就只能自带。
+    整套思源宋体 11 MB，这里只留真正出现过的字，压成 WOFF2：正文那一份
+    要装下全部签文，标题那一份只要页面上的字，很小。
     """
     import json
-    import re
 
     from fontTools import subset
 
-    if not os.path.exists(FONT_SRC):
-        raise SystemExit("缺字体原稿，先下载到 %s：\n  %s" % (FONT_SRC, FONT_URL))
+    src_path = os.path.join(RAW, "NotoSerifSC-%s.otf" % weight)
+    if not os.path.exists(src_path):
+        raise SystemExit("缺字体原稿，先下载到 %s：\n  %s" % (src_path, FONT_URL % weight))
 
-    root = os.path.join(HERE, "..")
-    with open(os.path.join(root, "quotes.js"), encoding="utf-8") as f:
-        src = f.read()
-    rows = json.loads(src[src.index("["): src.rindex("]") + 1])
-    text = "".join(r["quote"] + r["work"] + r.get("year", "") for r in rows)
-    with open(os.path.join(root, "index.html"), encoding="utf-8") as f:
-        text += re.sub(r"<[^>]+>", "", f.read())
-    text += "柯灵《》「」『』“”‘’——⸺…·、，。！？；：（）0123456789No./ "
+    text = page_text()
+    if quotes:
+        with open(os.path.join(HERE, "..", "quotes.js"), encoding="utf-8") as f:
+            src = f.read()
+        rows = json.loads(src[src.index("["): src.rindex("]") + 1])
+        text += "".join(r["quote"] + r["work"] + r.get("year", "") for r in rows)
+        text += "柯灵《》「」『』“”‘’——⸺…·、，。！？；：（）"
 
-    out = os.path.join(HERE, "serif.woff2")
+    out = os.path.join(HERE, name)
     opts = subset.Options()
     opts.flavor = "woff2"
     opts.layout_features = ["vert", "vrt2", "vkrn", "vpal", "kern", "palt"]
     opts.name_IDs = []
     opts.hinting = False
-    font = subset.load_font(FONT_SRC, opts)
+    font = subset.load_font(src_path, opts)
     sub = subset.Subsetter(opts)
     sub.populate(text=text)
     sub.subset(font)
@@ -328,7 +338,8 @@ def build_font():
 
 if __name__ == "__main__":
     made = [
-        build_font(),
+        build_font("SemiBold", "serif.woff2", quotes=True),
+        build_font("Black", "title.woff2", quotes=False),
         build_qr(),
         build_tube(),
     ] + build_stickers() + [
