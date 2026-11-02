@@ -32,7 +32,7 @@ jobs:
           mkdir -p _site/keling/assets
           cp -R dist/. _site/
           cp keling/index.html keling/styles.css keling/app.js keling/quotes.js _site/keling/
-          cp keling/assets/*.webp keling/assets/qr.png _site/keling/assets/
+          cp keling/assets/*.webp keling/assets/*.woff2 keling/assets/qr.png _site/keling/assets/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

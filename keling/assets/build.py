@@ -283,8 +283,52 @@ def build_qr():
     return path
 
 
+FONT_SRC = os.path.join(RAW, "NotoSerifSC-Medium.otf")
+FONT_URL = "https://github.com/notofonts/noto-cjk/raw/main/Serif/SubsetOTF/SC/NotoSerifSC-Medium.otf"
+
+
+def build_font():
+    """书签正文自带一份宋体子集。
+
+    iOS 和微信内置浏览器里没有宋体（Songti SC 要单独下载），正文会退成
+    苹方黑体，又粗又挤；安卓更是各家不同。海报要在谁手机上截出来都一样，
+    就只能自带字体。整套思源宋体 11 MB，这里只留签文、篇名和页面上真正
+    出现过的字，压成 WOFF2。
+    """
+    import json
+    import re
+
+    from fontTools import subset
+
+    if not os.path.exists(FONT_SRC):
+        raise SystemExit("缺字体原稿，先下载到 %s：\n  %s" % (FONT_SRC, FONT_URL))
+
+    root = os.path.join(HERE, "..")
+    with open(os.path.join(root, "quotes.js"), encoding="utf-8") as f:
+        src = f.read()
+    rows = json.loads(src[src.index("["): src.rindex("]") + 1])
+    text = "".join(r["quote"] + r["work"] + r.get("year", "") for r in rows)
+    with open(os.path.join(root, "index.html"), encoding="utf-8") as f:
+        text += re.sub(r"<[^>]+>", "", f.read())
+    text += "柯灵《》「」『』“”‘’——⸺…·、，。！？；：（）0123456789No./ "
+
+    out = os.path.join(HERE, "serif.woff2")
+    opts = subset.Options()
+    opts.flavor = "woff2"
+    opts.layout_features = ["vert", "vrt2", "vkrn", "vpal", "kern", "palt"]
+    opts.name_IDs = []
+    opts.hinting = False
+    font = subset.load_font(FONT_SRC, opts)
+    sub = subset.Subsetter(opts)
+    sub.populate(text=text)
+    sub.subset(font)
+    subset.save_font(font, out, opts)
+    return out
+
+
 if __name__ == "__main__":
     made = [
+        build_font(),
         build_qr(),
         build_tube(),
     ] + build_stickers() + [
@@ -301,5 +345,6 @@ if __name__ == "__main__":
     for p in made:
         n = os.path.getsize(p)
         total += n
-        print("%-28s %6.1f KB  %s" % (os.path.basename(p), n / 1024, Image.open(p).size))
+        dim = "" if p.endswith(".woff2") else Image.open(p).size
+        print("%-28s %6.1f KB  %s" % (os.path.basename(p), n / 1024, dim))
     print("%-28s %6.1f KB" % ("合计", total / 1024))

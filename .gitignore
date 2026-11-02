@@ -11,3 +11,6 @@ __pycache__/
 *.pem
 .cert.*
 _site/
+
+# 字体原稿 11 MB，build.py 缺它时会给出下载地址；上线的是子集 serif.woff2
+keling/assets/raw/*.otf

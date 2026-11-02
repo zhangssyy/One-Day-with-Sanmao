@@ -18,7 +18,7 @@
   const TONE = { "祝福": "bless", "启示": "insight", "启示与祝福": "both" };
 
   // [字号, 列宽]，由大到小。MARK_CHROME 是卡片内外框加内边距占掉的宽度。
-  const TYPE_STEPS = [[25, 46], [22, 40], [19, 35], [17, 31], [15, 27], [13, 24], [12, 22]];
+  const TYPE_STEPS = [[21, 44], [19, 40], [17, 36], [16, 33], [15, 31], [13, 28], [12, 25]];
   const MARK_CHROME = 54;
 
   const el = {};
@@ -80,6 +80,8 @@
   window.addEventListener("pagehide", teardown);
   window.addEventListener("resize", setType);
   window.addEventListener("orientationchange", setType);
+  // 自带宋体到得晚，先按回退字体排出来的列数就不准了，到了再排一次。
+  if (document.fonts) document.fonts.ready.then(setType);
 
   if (/[?&]again\b/.test(location.search)) {
     forget();
@@ -210,7 +212,9 @@
 
   function fill(quote, at) {
     el.app.dataset.tone = TONE[quote.intent] || "both";
-    el.quote.textContent = quote.quote;
+    // "——"是两个字符，字距和字形自带的边距会把它从中间拉断；
+    // 换成一笔到底的二倍长破折号"⸺"。
+    el.quote.textContent = quote.quote.replace(/——/g, "⸺");
     el.work.textContent = "《" + quote.work + "》";
     el.year.textContent = quote.year || "";
 

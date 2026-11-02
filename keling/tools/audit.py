@@ -29,7 +29,7 @@ CHECK = r"""
   var out = { n: 0, flat: 0, fs: {}, minH: 1e9, broken: [] };
 
   for (var i = 0; i < list.length; i += 1) {
-    quote.textContent = list[i].quote;
+    quote.textContent = list[i].quote.replace(/——/g, '⸺');
     work.textContent = '《' + list[i].work + '》';
     window.dispatchEvent(new Event('resize'));
     out.n += 1;
@@ -79,6 +79,9 @@ def main():
             c.js("document.getElementById('draw').click()")
             for _ in range(200):
                 if c.js("document.getElementById('app').dataset.state === 'shown'"):
+                    break
+            for _ in range(200):
+                if c.js("document.fonts.status === 'loaded'"):
                     break
             res = c.js(CHECK)
             print("%-11s %s" % ("%dx%d" % (w, h), res))

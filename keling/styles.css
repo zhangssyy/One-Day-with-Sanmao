@@ -1,3 +1,12 @@
+/* 正文自带的宋体子集（见 assets/build.py）。用 block：海报要截图，
+   先闪一下黑体再换成宋体，截到的可能就是那一帧。 */
+@font-face {
+  font-family: "KL Serif";
+  src: url("assets/serif.woff2") format("woff2");
+  font-weight: 500;
+  font-display: block;
+}
+
 :root {
   color-scheme: light;
 
@@ -22,6 +31,7 @@
   --seal-ink: #f7f1e4;
 
   --serif: "Songti SC", "Source Han Serif SC", "Noto Serif SC", "STSong", serif;
+  --book: "KL Serif", var(--serif);
   --kai: "Kaiti SC", "STKaiti", "KaiTi", var(--serif);
   --sans: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB",
     "Microsoft YaHei", system-ui, sans-serif;
@@ -459,7 +469,8 @@ img { -webkit-user-drag: none; user-select: none; -webkit-user-select: none; }
 
 .lead {
   margin: 14px 0 0;
-  font-family: var(--serif);
+  font-family: var(--book);
+  font-weight: 500;
   font-size: 15px;
   line-height: 1.75;
   letter-spacing: 0.12em;
@@ -615,19 +626,21 @@ img { -webkit-user-drag: none; user-select: none; -webkit-user-select: none; }
 
 /* --fs/--lh/width 由 app.js 按实际列高算出来；这里的值只是首帧的落脚点。
    --lh 既是竖排的列宽，也是界行的间距，两者必须同一个值。 */
+/* 列宽约为字号的 2.1 倍、字距 0.14em：手机上一列一列之间要透得过气，
+   比纸本竖排疏一些才不显挤。 */
 .quote {
-  --fs: 25px;
-  --lh: 46px;
+  --fs: 21px;
+  --lh: 44px;
   width: var(--lh);
   height: 100%;
   margin: 0;
   writing-mode: vertical-rl;
   text-orientation: mixed;
-  font-family: var(--serif);
+  font-family: var(--book);
   font-size: var(--fs);
-  font-weight: 600;
+  font-weight: 500;
   line-height: var(--lh);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.14em;
   user-select: text;
   -webkit-user-select: text;
   background-image: repeating-linear-gradient(
@@ -638,7 +651,6 @@ img { -webkit-user-drag: none; user-select: none; -webkit-user-select: none; }
 }
 
 .mark[data-set="middle"] .quote { text-align: center; }
-
 .mark[data-flat] {
   width: min(420px, 92vw);
   max-width: 92vw;
@@ -685,7 +697,7 @@ img { -webkit-user-drag: none; user-select: none; -webkit-user-select: none; }
   background-size: 100% 100%;
   background-repeat: no-repeat;
   color: var(--seal-ink);
-  font-family: var(--kai);
+  font-family: var(--book);
   font-size: 13px;
   line-height: 1.06;
   writing-mode: vertical-rl;
@@ -693,7 +705,8 @@ img { -webkit-user-drag: none; user-select: none; -webkit-user-select: none; }
 }
 
 .by cite {
-  font-family: var(--serif);
+  font-family: var(--book);
+  font-weight: 500;
   font-size: 13px;
   font-style: normal;
   letter-spacing: 0.04em;
