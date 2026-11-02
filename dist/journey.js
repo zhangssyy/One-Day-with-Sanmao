@@ -60,9 +60,12 @@ function renderJourneyUI() {
     b.onclick = () => goStep(chapter.start);
     $('#route-list').append(b);
   });
+  // 小屏上章节条是横向的，当前章可能排在可视范围外
+  const currentChip = $('#route-list').querySelector('.chapter-button.active');
+  if (currentChip) $('#route-list').scrollTo({ left: currentChip.offsetLeft - ($('#route-list').clientWidth - currentChip.offsetWidth) / 2 });
   const chapter = currentChapter();
   $('#guide-task').innerHTML = `<span>${journey.stamps.has(chapter.id) ? '✓' : '✦'}</span><span>${chapter.task}</span><span>↗</span>`;
-  $('#journey-count').textContent = journey.stamps.size + ' / 6 个小发现';
+  $('#journey-count').innerHTML = `${journey.stamps.size} / 6<span class="count-unit"> 个小发现</span>`;
   $('#guide-card-label').textContent = journey.stamps.has(chapter.id) ? '这一站的小发现，收好啦' : '这一站，找点什么？';
   $('#previous-room').disabled = !guided || journey.step === 0;
   $('#previous-room').setAttribute('aria-label', '回看上一处');
