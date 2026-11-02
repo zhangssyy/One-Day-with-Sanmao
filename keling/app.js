@@ -81,7 +81,12 @@
   window.addEventListener("resize", setType);
   window.addEventListener("orientationchange", setType);
   // 自带宋体到得晚，先按回退字体排出来的列数就不准了，到了再排一次。
-  if (document.fonts) document.fonts.ready.then(setType);
+  // 不能用 document.fonts.ready：脚本跑到这里时字体往往还没开始下载，
+  // ready 当场就兑现了。显式发起加载，等它真到了再排。
+  if (document.fonts && document.fonts.load) {
+    document.fonts.load('500 21px "KL Serif"', "柯灵").then(setType, setType);
+    document.fonts.addEventListener("loadingdone", setType);
+  }
 
   if (/[?&]again\b/.test(location.search)) {
     forget();
@@ -287,24 +292,40 @@
       const fits = Math.max(1, Math.floor(room / lh));
       el.quote.style.setProperty("--fs", TYPE_STEPS[i][0] + "px");
       el.quote.style.setProperty("--lh", lh + "px");
-      el.quote.style.width = fits * lh + "px";
-      const fit = measure();
-      if (fit.cols <= fits && fit.spill <= 1) {
-        // 多出的 1px 让界行在最外一列的另一侧也画得出来，每列都被两道线框住。
-        el.quote.style.width = fit.cols * lh + 1 + "px";
-        // 一两列的短句居中更像一枚书签；多列就按常规顶对齐。
-        el.mark.dataset.set = fit.cols <= 2 ? "middle" : "head";
-        return;
+      let cols = measureAt(fits, lh).cols;
+      // 卡片一收窄，底下的篇名可能折成两行，正文的列就变矮了，原先站得下
+      // 的字会被挤到新的一列、落到卡片外头。所以按收窄后的宽度再量，
+      // 不够就放宽一列，直到量出来的和设下的对得上。
+      while (cols <= fits) {
+        const fit = measureAt(cols, lh);
+        if (fit.cols <= cols && fit.spill <= 1) {
+          // 一两列的短句居中更像一枚书签；多列就按常规顶对齐。
+          el.mark.dataset.set = cols <= 2 ? "middle" : "head";
+          return;
+        }
+        cols = Math.max(cols + 1, fit.cols);
       }
     }
 
     // 屏幅太矮（多半是横屏），竖排再小也排不下。退回横排，宁可不好看，
     // 也不能丢字。
     el.quote.style.width = "";
+    el.mark.style.width = "";
     el.quote.style.removeProperty("--fs");
     el.quote.style.removeProperty("--lh");
     el.mark.dataset.set = "head";
     el.mark.dataset.flat = "1";
+  }
+
+  // 把正文定成 cols 列宽，卡片跟着定宽，再量。卡片宽度直接写死，不交给
+  // CSS 的 max-content：iOS 的 WebKit 算不出竖排子元素的宽度，卡片会停在
+  // 最小宽度，正文从两边溢出去。多出的 1px 让界行在最外一列的另一侧也
+  // 画得出来，每列都被两道线框住。
+  function measureAt(cols, lh) {
+    const width = cols * lh + 1;
+    el.quote.style.width = width + "px";
+    el.mark.style.width = width + MARK_CHROME + "px";
+    return measure();
   }
 
   // 量一遍真实的排版结果：用了几列（cols），以及最多有几像素掉出了列底

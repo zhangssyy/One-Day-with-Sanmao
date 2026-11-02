@@ -45,10 +45,15 @@ CHECK = r"""
     var range = document.createRange();
     range.selectNodeContents(quote);
     var rects = range.getClientRects();
+    // 只比正文框不够：iOS 上正文框本身会比卡片宽，字照样在框里，
+    // 却跑出了卡片。所以左右两边都要和卡片的内框比。
+    var face = mark.querySelector('.face').getBoundingClientRect();
     var spill = 0, wide = 0;
     for (var j = 0; j < rects.length; j += 1) {
+      if (!rects[j].width || !rects[j].height) continue;
       spill = Math.max(spill, rects[j].bottom - box.bottom);
-      wide = Math.max(wide, box.left - rects[j].left);
+      wide = Math.max(wide, box.left - rects[j].left,
+                      face.left - rects[j].left, rects[j].right - face.right);
     }
 
     // 卡片被挤出面板，说明装饰吃掉了正文该有的地方。
