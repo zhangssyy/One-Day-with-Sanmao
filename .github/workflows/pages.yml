@@ -25,8 +25,16 @@ jobs:
       # Pages 需在仓库设置里把 Source 选为 GitHub Actions，开启一次即可；
       # 这里不用 enablement，工作流的 GITHUB_TOKEN 没有创建 Pages 站点的权限。
       - uses: actions/configure-pages@v5
+      # 第三站柯灵书签挂在 /keling/ 下。只拷网页要用的文件：
+      # 生图原稿（assets/raw）和出图、核查脚本留在仓库里，不上线。
+      - name: 拼装站点
+        run: |
+          mkdir -p _site/keling/assets
+          cp -R dist/. _site/
+          cp keling/index.html keling/styles.css keling/app.js keling/quotes.js _site/keling/
+          cp keling/assets/*.webp keling/assets/qr.png _site/keling/assets/
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: _site
       - id: deploy
         uses: actions/deploy-pages@v4

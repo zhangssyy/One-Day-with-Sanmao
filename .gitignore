@@ -6,3 +6,8 @@
 
 .DS_Store
 __pycache__/
+
+# 本地 HTTPS 预览用的证书和私钥，绝不入库
+*.pem
+.cert.*
+_site/

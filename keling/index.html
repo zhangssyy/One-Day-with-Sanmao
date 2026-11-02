@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fbf7e6">
+  <meta name="color-scheme" content="light">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="description" content="我和三毛的一天 · 第三站柯灵故居：晃一晃，从柯灵的文字里抽一枚书签带走。">
+  <title>柯灵书签 · 我和三毛的一天</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preload" as="image" href="assets/tube.webp">
+  <link rel="preload" as="image" href="assets/grain.webp">
+</head>
+<body>
+  <div class="app" id="app" data-state="idle">
+    <div class="deco" aria-hidden="true"><span class="grain"></span></div>
+
+    <header class="bar">
+      <div class="proj">
+        <p class="tag">@A Day with Sanmao</p>
+        <h1 class="name">我和三毛的一天</h1>
+        <p class="sub">衡复街区实体沙盘 × 手机 AR 叙事体验</p>
+      </div>
+      <span class="serial" id="serial" aria-hidden="true"></span>
+      <button class="icon" id="sound" type="button" aria-pressed="false" aria-label="开启声音">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path class="horn" d="M4 9.5h3.2L12 5.5v13L7.2 14.5H4z"></path>
+          <path class="wave wave-1" d="M15.4 9.6a3.6 3.6 0 0 1 0 4.8"></path>
+          <path class="wave wave-2" d="M18.2 7.2a7.2 7.2 0 0 1 0 9.6"></path>
+          <path class="mute" d="M15.6 9.8l4.8 4.4M20.4 9.8l-4.8 4.4"></path>
+        </svg>
+      </button>
+      <p class="station">
+        <span class="step">03</span>
+        <span class="when">14:00—17:00</span>
+        <b>遇见柯灵</b>
+        <span class="where">柯灵故居</span>
+      </p>
+    </header>
+
+    <div class="panels">
+      <span class="giant" aria-hidden="true">Ke Ling</span>
+
+      <section class="stage" id="stage">
+        <div class="scene">
+          <span class="house" aria-hidden="true"></span>
+          <img class="sticker s-pen" src="assets/st-pen.webp" alt="" aria-hidden="true">
+          <img class="sticker s-leaf" src="assets/st-leaf.webp" alt="" aria-hidden="true">
+          <img class="sticker s-film" src="assets/st-film.webp" alt="" aria-hidden="true">
+          <button class="bundle" id="bundle" type="button" aria-label="抽一枚书签">
+            <span class="fly" aria-hidden="true"></span>
+            <img class="tube" src="assets/tube.webp" alt="" draggable="false">
+          </button>
+        </div>
+        <p class="lead">临别时，柯灵送你一句话<br>它会陪你继续往下走</p>
+        <p class="tip" id="tip" aria-live="polite"></p>
+      </section>
+
+      <section class="sheet" id="sheet" aria-hidden="true">
+        <div class="hold">
+          <article class="mark">
+            <span class="ribbon" aria-hidden="true"></span>
+            <span class="eaves" aria-hidden="true"></span>
+            <div class="face">
+              <div class="text">
+                <blockquote class="quote" id="quote"></blockquote>
+              </div>
+              <span class="divider" aria-hidden="true"></span>
+              <p class="by">
+                <span class="seal">柯灵</span>
+                <cite id="work"></cite>
+              </p>
+            </div>
+          </article>
+          <img class="sticker c-pen" src="assets/st-pen.webp" alt="" aria-hidden="true">
+          <img class="sticker c-book" src="assets/st-book.webp" alt="" aria-hidden="true">
+        </div>
+        <p class="imprint">
+          <span id="year"></span>
+          <a id="src" target="_blank" rel="noopener noreferrer" hidden></a>
+        </p>
+      </section>
+    </div>
+
+    <footer class="tray">
+      <div class="go">
+        <button class="primary" id="draw" type="button">抽一枚书签</button>
+        <p class="rule" id="rule">每人限抽一枚 · 晃一晃手机也可以</p>
+      </div>
+      <div class="share">
+        <img class="qr" src="assets/qr.png" alt="项目二维码">
+        <div class="cta">
+          <b>扫码，抽一枚你的柯灵书签</b>
+          <span>上海 · 复兴西路 147 号 · 柯灵故居</span>
+          <span>张乐平柯灵单元 · <time id="date"></time></span>
+        </div>
+      </div>
+    </footer>
+
+    <p class="sr" id="live" aria-live="polite" role="status"></p>
+  </div>
+
+  <script src="quotes.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

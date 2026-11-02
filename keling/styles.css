@@ -1,0 +1,915 @@
+:root {
+  color-scheme: light;
+
+  /* 整套颜色都取自《我和三毛的一天》展板：明黄、矢车菊蓝、暖墨、米白卡片。
+     只有一套浅色——这一页最终是要被截图转发的，同一枚书签在谁的手机上
+     截出来都该是同一张图，深色模式会把它变成另一张。 */
+  --paper: #fbf7e6;
+  --card: #fbf8e2;
+  --ink: #342e30;
+  --ink-soft: #6f6a62;
+  --ink-faint: #9a9480;
+  --rule: #ddd6bd;
+  --rule-firm: #c9c3a8;
+
+  --yellow: #f0e452;
+  --blue: #568dc9;
+  --blue-deep: #3f74b3;
+  --green: #1f4a38;
+  --cinnabar: #a8392a;
+  --umber: #6b5330;
+  --tone: var(--green);
+  --seal-ink: #f7f1e4;
+
+  --serif: "Songti SC", "Source Han Serif SC", "Noto Serif SC", "STSong", serif;
+  --kai: "Kaiti SC", "STKaiti", "KaiTi", var(--serif);
+  --sans: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", system-ui, sans-serif;
+  /* 展板上那几个巨大的黄色英文（Sanmao / Our Day / Clues）是高反差衬线。 */
+  --display: "Bodoni 72", "Didot", "Playfair Display", Georgia, "Times New Roman", serif;
+
+  --shake: 0;
+  --tilt: 0;
+  --pad: clamp(16px, 5.5vw, 32px);
+}
+
+* { box-sizing: border-box; }
+
+html {
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  overscroll-behavior: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a { -webkit-tap-highlight-color: transparent; }
+img { -webkit-user-drag: none; user-select: none; -webkit-user-select: none; }
+
+:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* ── 骨架：三行网格，中间一行是唯一会伸缩的那行 ───────────────── */
+
+.app[data-tone="bless"] { --tone: var(--cinnabar); }
+.app[data-tone="insight"] { --tone: var(--green); }
+.app[data-tone="both"] { --tone: var(--umber); }
+
+.app {
+  position: relative;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  padding: calc(env(safe-area-inset-top) + 14px) var(--pad)
+    calc(env(safe-area-inset-bottom) + 16px);
+  overflow: hidden;
+}
+
+@supports (height: 100dvh) {
+  .app { height: 100dvh; }
+}
+
+.deco {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.grain,
+.house,
+.eaves,
+.divider {
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+.grain {
+  position: absolute;
+  inset: 0;
+  background-color: var(--ink);
+  opacity: 0.32;
+  -webkit-mask-image: url("assets/grain.webp");
+  mask-image: url("assets/grain.webp");
+  -webkit-mask-repeat: repeat;
+  mask-repeat: repeat;
+  -webkit-mask-size: 290px;
+  mask-size: 290px;
+}
+
+/* ── 报头：完整的项目信息，截图时它就是海报的抬头 ─────────────── */
+
+.bar {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  column-gap: 10px;
+}
+
+.proj { min-width: 0; }
+
+.proj p,
+.name { margin: 0; }
+
+.tag {
+  font-family: var(--display);
+  font-size: 13px;
+  font-style: italic;
+  letter-spacing: 0.02em;
+  color: var(--blue);
+}
+
+.name {
+  margin-top: 2px;
+  font-family: var(--serif);
+  font-size: clamp(26px, 8.4vw, 34px);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+  color: var(--blue-deep);
+}
+
+.sub {
+  margin-top: 5px;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+}
+
+/* 站点条：展板每一站都用"圈号 + 时段 + 站名"这一套。 */
+.station {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0 0;
+  padding: 4px 12px 4px 4px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--yellow);
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.station b {
+  font-family: var(--serif);
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.station .when { font-variant-numeric: tabular-nums; color: var(--ink); }
+
+.station .where {
+  margin-left: auto;
+  letter-spacing: 0.12em;
+}
+
+.step {
+  flex: none;
+  display: grid;
+  place-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* 编号像一枚邮戳，压在报头右上角：No.037 / 150。 */
+.serial {
+  display: none;
+  justify-items: center;
+  align-content: center;
+  width: 64px;
+  height: 64px;
+  margin-top: 2px;
+  border: 2px solid var(--blue);
+  border-radius: 50%;
+  color: var(--blue);
+  font-family: var(--display);
+  line-height: 1;
+  transform: rotate(10deg);
+}
+
+.serial b {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.serial small {
+  font-size: 9px;
+  letter-spacing: 0.1em;
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  margin: -4px -8px 0 0;
+  border-radius: 50%;
+  color: var(--ink-faint);
+}
+
+.icon svg {
+  width: 21px;
+  height: 21px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.icon .horn { fill: currentColor; stroke: none; }
+.icon .wave { opacity: 0; }
+.icon[aria-pressed="true"] { color: var(--blue); }
+.icon[aria-pressed="true"] .mute { opacity: 0; }
+.icon[aria-pressed="true"] .wave { opacity: 1; }
+
+.app[data-state="shown"] .icon { display: none; }
+.app[data-state="shown"] .serial { display: grid; }
+
+/* ── 中间舞台 ──────────────────────────────────────────── */
+
+/* 行高必须显式给成 minmax(0, 1fr)：隐式行是 auto，会被藏起来的那一页
+   （签筒或书签）的内容撑开，卡片就跟着掉出屏幕。 */
+.panels {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
+  min-height: 0;
+}
+
+/* 展板那种巨大的黄色英文，斜着垫在后面。 */
+.giant {
+  position: absolute;
+  z-index: 0;
+  left: -0.06em;
+  top: 0.12em;
+  font-family: var(--display);
+  font-size: clamp(92px, 33vw, 200px);
+  font-weight: 700;
+  line-height: 0.8;
+  letter-spacing: -0.02em;
+  color: var(--yellow);
+  white-space: nowrap;
+  transform: rotate(-7deg);
+  pointer-events: none;
+}
+
+.stage,
+.sheet {
+  position: relative;
+  z-index: 1;
+  grid-area: 1 / 1;
+  min-height: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.34s ease, visibility 0.34s, transform 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+}
+
+/* ── 待抽：一只签筒 ────────────────────────────────────── */
+
+.stage {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto auto;
+  justify-items: center;
+  align-items: center;
+  container-type: size;
+}
+
+.app[data-state="idle"] .stage {
+  visibility: visible;
+  opacity: 1;
+}
+
+.app[data-state="drawing"] .stage {
+  visibility: visible;
+  opacity: 0;
+  transition-delay: 0.42s;
+}
+
+/* 签筒图是 560 × 1085，整组只有 --h 一个尺寸来源。 */
+/* 签筒的高度跟着舞台实际剩下的高度走（减去下面两行字），矮屏不会顶出去。 */
+.scene {
+  --h: min(48vh, 400px, 118vw);
+  --h: min(calc(100cqh - 96px), 400px, 118cqw);
+  position: relative;
+  width: calc(var(--h) * 0.516);
+  height: var(--h);
+}
+
+/* 签筒立在故居门前。 */
+.house {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: calc(var(--h) * 1.7);
+  aspect-ratio: 1040 / 538;
+  transform: translateX(-50%);
+  background-color: var(--green);
+  opacity: 0.2;
+  -webkit-mask-image: url("assets/house.webp");
+  mask-image: url("assets/house.webp");
+  pointer-events: none;
+}
+
+.bundle {
+  position: absolute;
+  inset: 0;
+  display: block;
+  transform: rotate(calc(var(--tilt) * 5deg));
+  transform-origin: 50% 96%;
+  transition: transform 0.12s linear;
+}
+
+.tube {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform-origin: 50% 96%;
+  filter: drop-shadow(0 10px 0 rgba(52, 46, 48, 0.12));
+}
+
+/* 闲着的时候自己也轻轻晃，招人去点。 */
+.app[data-state="idle"] .tube {
+  animation: idle 2.8s ease-in-out infinite;
+}
+
+@keyframes idle {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+
+.bundle.is-rattling .tube {
+  animation: rattle 0.16s ease-in-out infinite alternate;
+}
+
+@keyframes rattle {
+  from { transform: rotate(calc(-2deg - var(--amp))) translateY(-2px); }
+  to { transform: rotate(calc(2deg + var(--amp))); }
+}
+
+.app[data-state="drawing"] .tube {
+  animation: hop 0.5s cubic-bezier(0.3, 0.7, 0.4, 1.4);
+}
+
+@keyframes hop {
+  0% { transform: none; }
+  30% { transform: translateY(4%) scaleY(0.94); }
+  70% { transform: translateY(-3%) rotate(-3deg); }
+  100% { transform: none; }
+}
+
+/* 被抽中的那一枚：从筒口冲出来，越飞越大，交给书签页接住。 */
+.fly {
+  position: absolute;
+  left: 44%;
+  top: 4%;
+  width: 14%;
+  height: 40%;
+  border: 2px solid var(--ink);
+  border-top: 9px solid var(--tone);
+  border-radius: 2px;
+  background: var(--card);
+  opacity: 0;
+}
+
+.app[data-state="drawing"] .fly {
+  animation: fly 0.62s cubic-bezier(0.2, 0.8, 0.3, 1) 0.12s forwards;
+}
+
+@keyframes fly {
+  0% { opacity: 1; transform: translateY(30%) rotate(-4deg); }
+  55% { opacity: 1; transform: translateY(-40%) rotate(6deg) scale(1.25); }
+  100% { opacity: 0; transform: translateY(-55%) rotate(0deg) scale(2.4); }
+}
+
+/* 贴纸：展板上那种黑底小方块，歪着贴，像手账。 */
+.sticker {
+  position: absolute;
+  display: block;
+  pointer-events: none;
+  filter: drop-shadow(2px 3px 0 rgba(52, 46, 48, 0.18));
+}
+
+.s-pen {
+  right: calc(var(--h) * -0.19);
+  top: calc(var(--h) * 0.08);
+  width: calc(var(--h) * 0.16);
+  transform: rotate(14deg);
+}
+
+.s-leaf {
+  left: calc(var(--h) * -0.18);
+  top: calc(var(--h) * 0.4);
+  width: calc(var(--h) * 0.14);
+  transform: rotate(-12deg);
+}
+
+.s-film {
+  right: calc(var(--h) * -0.2);
+  bottom: calc(var(--h) * 0.16);
+  width: calc(var(--h) * 0.13);
+  transform: rotate(8deg);
+}
+
+.lead {
+  margin: 14px 0 0;
+  font-family: var(--serif);
+  font-size: 15px;
+  line-height: 1.75;
+  letter-spacing: 0.12em;
+  text-align: center;
+  color: var(--ink);
+}
+
+.tip {
+  margin: 2px 0 0;
+  min-height: 1.4em;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  color: var(--blue);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.tip.is-on { opacity: 1; }
+
+/* ── 抽中：整屏就是一张可以直接截图转发的海报 ──────────────── */
+
+.sheet {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  justify-items: center;
+  gap: 10px;
+  padding: 16px 0 0;
+  transform: translateY(24px) scale(0.96);
+}
+
+.app[data-state="shown"] .sheet {
+  visibility: visible;
+  opacity: 1;
+  transform: none;
+}
+
+.hold {
+  position: relative;
+  height: 100%;
+  min-height: 0;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr);
+}
+
+/* 卡片背后一块斜着的蓝，和身后的黄字撞色。只转这块底，不转卡片：
+   排版是按卡片的真实几何量出来的，卡片一转，量出来的列就不准了。 */
+.hold::before {
+  content: "";
+  position: absolute;
+  inset: 10px -8px -8px 10px;
+  border: 2px solid var(--ink);
+  background: var(--blue);
+  transform: rotate(3.2deg);
+}
+
+.mark {
+  position: relative;
+  align-self: center;
+  width: max-content;
+  min-width: min(162px, 46vw);
+  max-width: min(308px, 86vw);
+  height: 100%;
+  max-height: 540px;
+  padding: 24px 15px 15px;
+  background: var(--card);
+  box-shadow: 0 0 0 2px var(--ink);
+  transition: opacity 0.18s ease;
+}
+
+.mark::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  opacity: 0.32;
+  background-color: var(--ink);
+  pointer-events: none;
+  -webkit-mask-image: url("assets/grain.webp");
+  mask-image: url("assets/grain.webp");
+  -webkit-mask-size: 230px;
+  mask-size: 230px;
+}
+
+.ribbon {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 26px;
+  background: var(--tone);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 72%, 0 100%);
+}
+
+.ribbon::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 8px;
+  width: 7px;
+  height: 7px;
+  margin-left: -3.5px;
+  border-radius: 50%;
+  background: var(--card);
+}
+
+/* 筒瓦檐口，取自故居的瓦檐；上沿塞进缎带底下，只露瓦身。 */
+.eaves {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 15px;
+  width: min(72%, 136px);
+  aspect-ratio: 520 / 154;
+  transform: translateX(-50%);
+  opacity: 0.42;
+  background-color: var(--ink-faint);
+  pointer-events: none;
+  -webkit-mask-image: url("assets/eaves.webp");
+  mask-image: url("assets/eaves.webp");
+}
+
+.face {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding: 22px 11px 9px;
+  border: 1px solid var(--rule-firm);
+}
+
+.face::before {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border: 1px solid var(--rule);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* 竖排的列高就是这一格的高度：它必须吃掉面上剩下的全部空间，
+   app.js 才有一个确定的数去算字号。 */
+.text {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  align-self: stretch;
+  display: flex;
+  justify-content: center;
+}
+
+/* --fs/--lh/width 由 app.js 按实际列高算出来；这里的值只是首帧的落脚点。
+   --lh 既是竖排的列宽，也是界行的间距，两者必须同一个值。 */
+.quote {
+  --fs: 25px;
+  --lh: 46px;
+  width: var(--lh);
+  height: 100%;
+  margin: 0;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: var(--serif);
+  font-size: var(--fs);
+  font-weight: 600;
+  line-height: var(--lh);
+  letter-spacing: 0.04em;
+  user-select: text;
+  -webkit-user-select: text;
+  background-image: repeating-linear-gradient(
+    to left,
+    var(--rule) 0 1px,
+    transparent 1px var(--lh)
+  );
+}
+
+.mark[data-set="middle"] .quote { text-align: center; }
+
+.mark[data-flat] {
+  width: min(420px, 92vw);
+  max-width: 92vw;
+}
+
+.mark[data-flat] .quote {
+  width: 100%;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  writing-mode: horizontal-tb;
+  font-size: clamp(15px, 3.4vw, 19px);
+  line-height: 1.62;
+  background-image: none;
+}
+
+/* 一段铁艺栅，取自故居二层窗下的护栏。按高度封顶，免得反客为主。 */
+.divider {
+  flex: none;
+  height: min(54px, 15vh);
+  width: auto;
+  aspect-ratio: 560 / 257;
+  margin: 8px 0 6px;
+  opacity: 0.6;
+  background-color: var(--ink);
+  -webkit-mask-image: url("assets/railing.webp");
+  mask-image: url("assets/railing.webp");
+}
+
+.by {
+  flex: none;
+  margin: 0;
+  display: grid;
+  justify-items: center;
+  gap: 7px;
+}
+
+.seal {
+  display: grid;
+  place-content: center;
+  width: 34px;
+  height: 36px;
+  padding-top: 1px;
+  background-image: url("assets/seal.webp");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  color: var(--seal-ink);
+  font-family: var(--kai);
+  font-size: 13px;
+  line-height: 1.06;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+
+.by cite {
+  font-family: var(--serif);
+  font-size: 13px;
+  font-style: normal;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+/* 卡片角上的两枚贴纸，只压在缎带和外框上，碰不到正文。 */
+.c-pen {
+  z-index: 2;
+  right: -14px;
+  top: -18px;
+  width: 46px;
+  transform: rotate(12deg);
+}
+
+.c-book {
+  z-index: 2;
+  left: -14px;
+  bottom: -14px;
+  width: 42px;
+  transform: rotate(-10deg);
+}
+
+.imprint {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  gap: 4px 10px;
+  margin: 6px 0 0;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--ink-faint);
+}
+
+.imprint a {
+  color: inherit;
+  text-decoration-color: var(--rule-firm);
+  text-underline-offset: 4px;
+}
+
+/* ── 底部：抽之前是按钮，抽之后换成海报的落款 ──────────────── */
+
+.tray {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  padding-top: 14px;
+}
+
+.go,
+.share {
+  grid-area: 1 / 1;
+  transition: opacity 0.3s ease, visibility 0.3s;
+}
+
+.go {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+}
+
+.share {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px 8px 8px;
+  border: 2px solid var(--ink);
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 4px 0 var(--ink);
+  visibility: hidden;
+  opacity: 0;
+}
+
+.app[data-state="shown"] .go { visibility: hidden; opacity: 0; }
+.app[data-state="shown"] .share { visibility: visible; opacity: 1; }
+
+.qr {
+  flex: none;
+  width: 64px;
+  height: 64px;
+  image-rendering: pixelated;
+}
+
+.cta {
+  min-width: 0;
+  display: grid;
+  gap: 3px;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+}
+
+.cta b {
+  font-family: var(--serif);
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+}
+
+.primary {
+  width: 100%;
+  max-width: 22rem;
+  height: 56px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--yellow);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: 0.3em;
+  text-indent: 0.3em;
+  box-shadow: 0 5px 0 var(--ink);
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+
+.primary:active {
+  transform: translateY(4px);
+  box-shadow: 0 1px 0 var(--ink);
+}
+
+.primary[disabled] { opacity: 0.4; cursor: default; }
+
+.rule {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: var(--ink-soft);
+}
+
+/* ── 矮屏（多半是横屏）：装饰一律给正文让路 ────────────────── */
+
+@media (max-height: 620px) {
+  .sub { display: none; }
+  .name { font-size: 22px; }
+  .station { margin-top: 8px; padding: 2px 10px 2px 2px; font-size: 12px; }
+  .station b { font-size: 13px; }
+  .step { width: 20px; height: 20px; font-size: 10px; }
+  .serial { width: 48px; height: 48px; }
+  .serial b { font-size: 16px; }
+  .giant { font-size: clamp(80px, 20vw, 140px); }
+
+  .sheet { padding-top: 10px; gap: 6px; }
+  .tray { padding-top: 10px; }
+  .primary { height: 48px; }
+  .qr { width: 48px; height: 48px; }
+  .share { padding: 6px 10px 6px 6px; }
+  .cta b { font-size: 13px; }
+
+  .mark { padding-top: 18px; }
+  .face { padding: 12px 11px 6px; }
+
+  .divider {
+    height: 9px;
+    aspect-ratio: auto;
+    width: 72px;
+    margin: 6px 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    -webkit-mask-image: none;
+    mask-image: none;
+    background-image: url("assets/tile.webp");
+    background-size: 9px 9px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .divider::before,
+  .divider::after {
+    content: "";
+    flex: none;
+    width: 26px;
+    height: 1px;
+    background: var(--rule-firm);
+  }
+
+  .eaves { display: none; }
+
+  .seal {
+    width: 28px;
+    height: 29px;
+    font-size: 11px;
+  }
+
+  .by {
+    grid-auto-flow: column;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .c-pen { width: 34px; top: -12px; right: -10px; }
+  .c-book { width: 30px; }
+}
+
+/* 横屏：报头和底栏改成左右两栏，竖向空间全留给书签。 */
+@media (max-height: 500px) and (orientation: landscape) {
+  .app { grid-template-columns: minmax(0, 15rem) minmax(0, 1fr); column-gap: 20px; }
+  .bar { grid-column: 1; grid-row: 1; align-self: start; }
+  .tray { grid-column: 1; grid-row: 2 / 4; align-self: end; }
+  .panels { grid-column: 2; grid-row: 1 / 4; }
+  .app { grid-template-rows: auto minmax(0, 1fr) auto; }
+  .lead { display: none; }
+  .scene { --h: min(calc(100cqh - 30px), 300px); }
+  .share { flex-direction: column; align-items: flex-start; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+  }
+}
