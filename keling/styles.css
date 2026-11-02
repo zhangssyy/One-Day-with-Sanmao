@@ -3,14 +3,14 @@
    截图，先闪一下黑体再换成宋体，截到的可能就是那一帧。 */
 @font-face {
   font-family: "KL Serif";
-  src: url("assets/serif.woff2?v=1102c") format("woff2");
+  src: url("assets/serif.woff2?v=1102d") format("woff2");
   font-weight: 600;
   font-display: block;
 }
 
 @font-face {
   font-family: "KL Title";
-  src: url("assets/title.woff2?v=1102c") format("woff2");
+  src: url("assets/title.woff2?v=1102d") format("woff2");
   font-weight: 900;
   font-display: block;
 }
@@ -256,7 +256,7 @@ img { -webkit-user-drag: none; user-select: none; -webkit-user-select: none; }
 
 .serial small {
   font-size: 9px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
 }
 
 .icon {
@@ -626,8 +626,8 @@ img { -webkit-user-drag: none; user-select: none; -webkit-user-select: none; }
 /* 列宽约为字号的 2 倍、字距 0.1em：手机上一列一列之间要透得过气，
    比纸本竖排疏一些才不显挤。不画界行，字底下什么都不垫，只求看得清。 */
 .quote {
-  --fs: 24px;
-  --lh: 48px;
+  --fs: 20px;
+  --lh: 42px;
   width: var(--lh);
   height: 100%;
   margin: 0;
@@ -637,7 +637,7 @@ img { -webkit-user-drag: none; user-select: none; -webkit-user-select: none; }
   font-size: var(--fs);
   font-weight: 600;
   line-height: var(--lh);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   color: var(--ink-strong);
   user-select: text;
   -webkit-user-select: text;
@@ -716,7 +716,7 @@ img { -webkit-user-drag: none; user-select: none; -webkit-user-select: none; }
 
 #year {
   font-size: 11px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   color: var(--ink-soft);
 }
 

@@ -18,7 +18,7 @@
   const TONE = { "祝福": "bless", "启示": "insight", "启示与祝福": "both" };
 
   // [字号, 列宽]，由大到小。MARK_CHROME 是卡片内外框加内边距占掉的宽度。
-  const TYPE_STEPS = [[24, 48], [22, 45], [21, 42], [19, 39], [18, 36], [16, 33], [15, 31], [13, 28], [12, 25]];
+  const TYPE_STEPS = [[20, 42], [19, 40], [18, 38], [17, 36], [16, 34], [15, 31], [13, 28], [12, 25]];
   const MARK_CHROME = 54;
 
   const el = {};
@@ -83,9 +83,23 @@
   // 自带宋体到得晚，先按回退字体排出来的列数就不准了，到了再排一次。
   // 不能用 document.fonts.ready：脚本跑到这里时字体往往还没开始下载，
   // ready 当场就兑现了。显式发起加载，等它真到了再排。
+  // 列高一变，原先排好的列数就不作数了。会让它变的不只是窗口：标题字体
+  // 晚到会撑高报头，微信的工具栏会伸缩，这些都不发 resize。直接盯着正文
+  // 那一格的高度，变了就重排。
+  if (window.ResizeObserver) {
+    let column = 0;
+    new ResizeObserver(function (entries) {
+      const h = Math.round(entries[0].contentRect.height);
+      if (h !== column) {
+        column = h;
+        setType();
+      }
+    }).observe(el.quote.parentNode);
+  }
+
   if (document.fonts && document.fonts.load) {
-    document.fonts.load('600 24px "KL Serif"', "柯灵").then(setType, setType);
-    document.fonts.load('900 24px "KL Title"', "柯灵");
+    document.fonts.load('600 20px "KL Serif"', "柯灵").then(setType, setType);
+    document.fonts.load('900 20px "KL Title"', "柯灵");
     document.fonts.addEventListener("loadingdone", setType);
   }
 
